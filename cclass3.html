@@ -13,13 +13,34 @@
             height: 100vh;
             background-color: #f0f0f0;
         }
+        
+        /* Unlock Page Styling */
+        .unlock-container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 100px auto;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
 
         .video-container {
             position: relative;
             width: 100%;
             padding-top: 25%; /* Maintain 4:1 aspect ratio for landscape */
             max-width: 800px;
-            height: 100%;
+            height: 200%;
         }
 
         .video-container iframe {
@@ -27,14 +48,64 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 200%;
             border: none;
+        }
+        button {
+            display: block;
+            background-color: #0275d8;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #025aa5;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+
+        /* Hide the main content initially */
+        .container {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <div class="video-container">
+
+    <!-- Unlock Page -->
+    <div class="unlock-container" id="unlockPage">
+        <h1>Enter PIN to Unlock</h1>
+        <input type="password" id="pinInput" maxlength="4" placeholder="Enter 4-digit PIN">
+        <button onclick="unlockPage()">Unlock</button>
+        <p class="error-message" id="errorMessage" style="display:none;">Incorrect PIN. Try again.</p>
+    </div>
+
+    <!-- Main Page with Video -->
+    <div class="container" id="mainPage">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/d8IBpfs9bf4?si=nrUdZPu7mqOfbDZp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
+
+    <script>
+        function unlockPage() {
+            const pin = document.getElementById('pinInput').value;
+            const correctPin = "3333"; // Set your desired PIN here
+            
+            if (pin === correctPin) {
+                document.getElementById('unlockPage').style.display = 'none';
+                document.getElementById('mainPage').style.display = 'block';
+            } else {
+                document.getElementById('errorMessage').style.display = 'block';
+            }
+        }
+    </script>
+
 </body>
 </html>
