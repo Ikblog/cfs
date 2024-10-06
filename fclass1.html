@@ -4,82 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>What is Forex? - Blog Post</title>
+    <title>Unlock and Main Page</title>
     <style>
-        /* General Styles */
-        * {
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f5f5f5;
             color: #333;
             line-height: 1.6;
-            padding: 0px;
         }
 
+        /* Unlock Page Styling */
+        .unlock-container {
+            max-width: 250px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 120px auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #0275d8;
+            margin-bottom: 20px;
+        }
+
+        input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        button {
+            display: block;
+            background-color: #0275d8;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #025aa5;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+
+        /* Main Page Styling */
         .container {
             max-width: 900px;
-            margin: auto;
+            margin: 20px auto;
             padding: 20px;
-            background: #fff;
-            border-radius: 0px;
+            background-color: #fff;
+            border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
         }
 
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-            color: #0275d8;
-        }
-
-        section.content {
-            margin-top: 20px;
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
         }
 
         h2 {
             color: #0275d8;
             margin-top: 20px;
+            font-size: 1.8rem;
         }
 
-        ul, ol {
-            margin-top: 10px;
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: disc;
             margin-left: 20px;
         }
 
-        ul li, ol li {
+        ul li {
             margin-bottom: 10px;
         }
 
         footer {
-            margin-top: 30px;
+            margin-top: 20px;
             text-align: center;
             font-size: 0.9rem;
             color: #666;
         }
 
-        /* Mobile Styles */
+        /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8rem;
+            h1 {
+                font-size: 2rem;
             }
 
-            section.content {
-                font-size: 1rem;
+            h2 {
+                font-size: 1.5rem;
             }
 
-            footer {
-                font-size: 0.8rem;
+            button {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
+
+<!-- Unlock Page -->
+<div class="unlock-container" id="unlockPage">
+    <h1>Enter PIN to Unlock</h1>
+    <input type="password" id="pinInput" maxlength="4" placeholder="Enter 4-digit PIN">
+    <button onclick="unlockPage()">Unlock</button>
+    <p class="error-message" id="errorMessage" style="display:none;">Incorrect PIN. Try again.</p>
+</div>
+
+<!-- Main Content Page -->
+<div class="container" id="mainPage">
+   <header>
             <h1>What is Forex? A Beginner’s Guide to the World’s Largest Financial Market</h1>
         </header>
 
@@ -188,10 +245,23 @@
         </footer>
     </div>
 
-    <script>
-        // You can add any interactive features or analytics tracking here
+<script>
+    function unlockPage() {
+        const pin = document.getElementById('pinInput').value;
+        const correctPin = "1111"; // Set your desired PIN here
+        
+        if (pin === correctPin) {
+            document.getElementById('unlockPage').style.display = 'none';
+            document.getElementById('mainPage').style.display = 'block';
+        } else {
+            document.getElementById('errorMessage').style.display = 'block';
+        }
+    }
 
-        console.log("Blog page loaded successfully!");
-    </script>
+    function watchVideo() {
+        window.location.href = "https://www.youtube.com/watch?v=1YyAzVmP9xQ";  // Update this with your specific YouTube link
+    }
+</script>
+
 </body>
 </html>
