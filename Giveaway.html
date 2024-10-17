@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giveaway App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            margin-top: 40px;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .giveaway-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px 0;
+            width: 350px;
+        }
+        .giveaway-btn.disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .ad-container {
+            margin: 20px 0;
+        }
+    </style>
+    <!-- AdMob SDK -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-app-pub-1026623550653403~8501163708",
+            enable_page_level_ads: true
+        });
+
+        // Initialize AdMob
+        function initAdMob() {
+            // Banner ad
+            const banner = new google.ads.BannerAd({
+                adUnitId: 'ca-app-pub-1026623550653403/9374411610'
+            });
+
+            // Rewarded ad
+            window.rewardedAd = new google.ads.RewardedAd({
+                adUnitId: 'ca-app-pub-1026623550653403/8932747854'
+            });
+            
+            rewardedAd.load().then(() => {
+                console.log('Rewarded video ad is loaded.');
+            }).catch(error => {
+                console.error("Rewarded video ad failed to load: ", error);
+            });
+
+            // Interstitial ad
+            window.interstitialAd = new google.ads.InterstitialAd({
+                adUnitId: 'ca-app-pub-1026623550653403/4314506684'
+            });
+
+            interstitialAd.load().then(() => {
+                console.log('Interstitial ad is loaded.');
+            }).catch(error => {
+                console.error("Interstitial ad failed to load: ", error);
+            });
+        }
+
+        window.onload = initAdMob;
+    </script>
+</head>
+<body>
+    <h1>CFS TRADING Academy Giveaway</h1>
+    <div class="container">
+        <!-- Buttons for Giveaway -->
+        <button class="giveaway-btn" id="giveaway1" onclick="handleClick(this, 1)">Giveaway 1</button>
+        <button class="giveaway-btn" id="giveaway2" onclick="handleClick(this, 2)">Giveaway 2</button>
+        <button class="giveaway-btn" id="giveaway3" onclick="handleClick(this, 3)">Giveaway 3</button>
+        <button class="giveaway-btn" id="giveaway4" onclick="handleClick(this, 4)">Giveaway 4</button>
+        <button class="giveaway-btn" id="giveaway5" onclick="handleClick(this, 5)">Giveaway 5</button>
+        <button class="giveaway-btn" id="giveaway6" onclick="handleClick(this, 6)">Giveaway 6</button>
+        <button class="giveaway-btn" id="giveaway7" onclick="handleClick(this, 7)">Giveaway 7</button>
+        <button class="giveaway-btn" id="giveaway8" onclick="handleClick(this, 8)">Giveaway 8</button>
+        <button class="giveaway-btn" id="giveaway9" onclick="handleClick(this, 9)">Giveaway 9</button>
+        <button class="giveaway-btn" id="giveaway10" onclick="handleClick(this, 10)">Giveaway 10</button>
+        
+        <!-- AdMob Banner Ad -->
+        <div class="ad-container">
+            <ins class="adsbygoogle"
+                style="display:inline-block;width:320px;height:100px"
+                data-ad-client="ca-app-pub-1026623550653403/9374411610"
+                data-ad-slot="BANNER_SLOT_ID"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <script>
+        // Load the saved button states from localStorage when the page loads
+        window.onload = function() {
+            for (let i = 1; i <= 10; i++) {
+                let buttonState = localStorage.getItem(`giveaway${i}`);
+                if (buttonState === 'taken') {
+                    let button = document.getElementById(`giveaway${i}`);
+                    button.classList.add('disabled');
+                    button.innerText = 'Taken - Try Another';
+                }
+            }
+        }
+
+        // Function to handle the button click
+        function handleClick(button, id) {
+            if (!button.classList.contains('disabled')) {
+                // Show rewarded video ad before proceeding
+                showRewardedVideoAd(() => {
+                    // Mark the button as taken
+                    button.classList.add('disabled');
+                    button.innerText = 'Taken - Try Another';
+
+                    // Save the state in localStorage
+                    localStorage.setItem(`giveaway${id}`, 'taken');
+
+                    // Redirect to the respective giveaway page
+                    window.location.href = `giveaway${id}.html`;
+                });
+            }
+        }
+
+        // Show rewarded video ad and proceed on completion
+        function showRewardedVideoAd(callback) {
+            if (window.rewardedAd) {
+                window.rewardedAd.show().then(() => {
+                    console.log('Rewarded video ad shown successfully.');
+                    callback();
+                }).catch(error => {
+                    console.error("Rewarded video ad failed to show: ", error);
+                    callback(); // Continue even if the ad fails to load
+                });
+            } else {
+                console.error("Rewarded ad not initialized.");
+                callback();
+            }
+        }
+    </script>
+</body>
+</html>
