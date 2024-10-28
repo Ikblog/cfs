@@ -10,7 +10,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 80vh;
             margin: 0;
         }
 
@@ -26,8 +26,8 @@
         }
 
         h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
+            font-size: 10em;
+            margin-bottom: 40px;
         }
 
         p {
@@ -71,6 +71,35 @@
         .whatsapp-btn:hover {
             background: #1EBE56;
         }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 100%;
+                padding: 15px;
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .btn {
+                font-size: 1em;
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.2em;
+            }
+
+            .btn {
+                font-size: 0.9em;
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -82,7 +111,7 @@
         <button class="btn youtube-btn" onclick="openLink('https://youtube.com/@cfstradingacademy?feature=shared')">Subscribe on YouTube</button>
         <button class="btn youtube-btn" onclick="openLink('https://www.youtube.com/@LearnWitKelvin')">Subscribe on YouTube</button>
         <button class="btn telegram-btn" onclick="openLink('https://t.me/cfs_t')">Join our Telegram Channel</button>
-        <button class="btn telegram-btn" onclick="openLink('https://t.me/learnwithkel')">Join our Telegram </button>
+        <button class="btn telegram-btn" onclick="openLink('https://t.me/learnwithkel')">Join our Telegram</button>
         <button class="btn facebook-btn" onclick="openLink('https://www.facebook.com/profile.php?id=61566081546020')">Follow on Facebook</button>
 
         <h2>Submit your Screenshot</h2>
