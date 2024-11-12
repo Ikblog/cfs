@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Unlock and Main Page</title>
+    <style>
+        /* General Styling */
+          body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        /* Unlock Page Styling */
+        .unlock-container {
+            max-width: 250px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 120px auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #0275d8;
+            margin-bottom: 20px;
+        }
+
+        input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        button {
+            display: block;
+            background-color: #0275d8;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #025aa5;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+
+        /* Main Page Styling */
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #0275d8;
+            margin-top: 30px;
+            font-size: 2,0rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 2,0rem;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Unlock Page -->
+<div class="unlock-container" id="unlockPage">
+    <h1>Enter PIN to Unlock</h1>
+    <input type="password" id="pinInput" maxlength="4" placeholder="Enter 4-digit PIN">
+    <button onclick="unlockPage()">Unlock</button>
+    <p class="error-message" id="errorMessage" style="display:none;">Incorrect PIN. Try again.</p>
+</div>
+
+<!-- Main Content Page -->
+<div class="container" id="mainPage">
+    
+    <img src="https://www.kaspersky.com/content/en-global/images/repository/isc/2021/cryptocurrency_image1_1130490519_670x377px_300dpi.jpg?text=What+is+Cryptocurrency" alt="Cryptocurrency Image">
+    <h1><strong> What is Altcoin? A Beginner's Guide to Understanding Alternative Cryptocurrencies</strong></h1>
+  <p>In the world of cryptocurrency, Bitcoin often takes the spotlight, but there's a vast universe of digital currencies beyond Bitcoin known as <span class="highlight">"altcoins."</span> The term "altcoin" is short for "alternative coin" and represents any cryptocurrency other than Bitcoin. Since Bitcoin's launch in 2009, thousands of altcoins have emerged, each with unique purposes, features, and communities. In this post, we’ll explore what altcoins are, why they exist, and some of the most popular types of altcoins today.</p>
+
+  <h2>What Are Altcoins?</h2>
+  <p>Simply put, an altcoin is any cryptocurrency that isn’t Bitcoin. While Bitcoin was the first digital currency to successfully bring blockchain technology to the public, developers soon saw opportunities to create alternative cryptocurrencies with varied applications, features, and improvements. Each altcoin typically has its own blockchain, uses a decentralized ledger to record transactions, and relies on cryptographic techniques for security, though they often function differently from Bitcoin.</p>
+
+  <h2>Why Do Altcoins Exist?</h2>
+  <p>Bitcoin was designed as a peer-to-peer digital currency and has become known as "digital gold." However, it has some limitations, such as scalability and energy-intensive mining. Altcoins were created to address these limitations or to introduce new functionalities that go beyond a simple digital currency. For example, some altcoins aim to improve transaction speeds, offer more privacy, or introduce smart contracts (self-executing agreements coded into the blockchain).</p>
+
+  <h2>Types of Altcoins</h2>
+  
+  <ul>
+    <li><strong>Stablecoins:</strong> Designed to reduce volatility by pegging their value to a stable asset, like the US dollar or a commodity such as gold. Examples include Tether (USDT) and USD Coin (USDC).</li>
+    <li><strong>Utility Tokens:</strong> Provide access to a product or service within a particular blockchain network. For instance, Ether (ETH) is used to pay for transactions on the Ethereum network.</li>
+    <li><strong>Security Tokens:</strong> These are digital versions of traditional securities, like stocks and bonds, backed by real assets.</li>
+    <li><strong>Privacy Coins:</strong> Focus on privacy features, masking transaction details to ensure confidentiality. Examples include Monero (XMR) and Zcash (ZEC).</li>
+    <li><strong>Meme Coins:</strong> Initially created as jokes or community-driven projects, such as Dogecoin (DOGE) and Shiba Inu (SHIB).</li>
+    <li><strong>Governance Tokens:</strong> Allow holders to participate in decision-making for a blockchain project, like Uniswap (UNI) and Maker (MKR).</li>
+  </ul>
+
+  <h2>Popular Altcoins</h2>
+  <ul>
+    <li><strong>Ethereum (ETH):</strong> Known for decentralized finance (DeFi) and smart contracts, enabling developers to build and deploy DApps.</li>
+    <li><strong>Ripple (XRP):</strong> Focuses on cross-border payments for financial institutions with unique features.</li>
+    <li><strong>Litecoin (LTC):</strong> Offers faster transaction times and was designed as a more accessible version of Bitcoin.</li>
+    <li><strong>Cardano (ADA):</strong> A research-driven blockchain with a focus on scalability and sustainability.</li>
+  </ul>
+
+  <h2>Are Altcoins a Good Investment?</h2>
+  <p>Altcoins provide diversity within the cryptocurrency market, offering various use cases and benefits. However, they come with a high level of risk, as they tend to be more volatile than Bitcoin and can be affected by market speculation. Researching each project’s fundamentals, team, and real-world applications is essential before investing.</p>
+
+  <h2>Final Thoughts</h2>
+  <p>Altcoins add value to the cryptocurrency ecosystem by expanding possibilities beyond what Bitcoin offers. Whether for financial privacy, decentralized finance, or smart contracts, understanding altcoins can help you make informed decisions in the cryptocurrency space.</p>
+    
+    
+    <a href="https://youtu.be/HG6XaFDI3hw?feature=shared">
+  <button>Watch a YouTube Video in the App</button>
+  
+</a>
+    
+
+    <!-- Button to watch YouTube video -->
+    
+
+    <footer>
+        <p>© 2024 CFS Trading Academy | All rights reserved</p>
+    </footer>
+</div>
+
+<script>
+    function unlockPage() {
+        const pin = document.getElementById('pinInput').value;
+        const correctPin = "8811"; // Set your desired PIN here
+        
+        if (pin === correctPin) {
+            document.getElementById('unlockPage').style.display = 'none';
+            document.getElementById('mainPage').style.display = 'block';
+        } else {
+            document.getElementById('errorMessage').style.display = 'block';
+        }
+    }
+
+    
+    
+</script>
+
+</body>
+  </html>
