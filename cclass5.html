@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Unlock and Main Page</title>
+    <style>
+        /* General Styling */
+          body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        /* Unlock Page Styling */
+        .unlock-container {
+            max-width: 250px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 120px auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #0275d8;
+            margin-bottom: 20px;
+        }
+
+        input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        button {
+            display: block;
+            background-color: #0275d8;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #025aa5;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+
+        /* Main Page Styling */
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #0275d8;
+            margin-top: 20px;
+            font-size: 1.8rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Unlock Page -->
+<div class="unlock-container" id="unlockPage">
+    <h1>Enter PIN to Unlock</h1>
+    <input type="password" id="pinInput" maxlength="4" placeholder="Enter 4-digit PIN">
+    <button onclick="unlockPage()">Unlock</button>
+    <p class="error-message" id="errorMessage" style="display:none;">Incorrect PIN. Try again.</p>
+    <h2>Enter The Pin Below To Unlock to Class</h2>
+    <h3>5555</h3>
+</div>
+
+<!-- Main Content Page -->
+<div class="container" id="mainPage">
+    <h1>Understanding Crypto Exchanges</h1>
+    <!--<img src="https://www.kaspersky.com/content/en-global/images/repository/isc/2021/cryptocurrency_image1_1130490519_670x377px_300dpi.jpg?text=What+is+Cryptocurrency" alt="Cryptocurrency Image">-->
+
+        <p>Cryptocurrency exchanges are the bustling marketplaces where digital assets like Bitcoin, Ethereum, and thousands of other cryptocurrencies are traded. For newcomers to the crypto world, understanding how these exchanges work is crucial for a safe and successful trading experience. This guide will break down the key aspects of crypto exchanges and what you need to know to navigate them effectively.</p>
+
+        <h2>What is a Crypto Exchange?</h2>
+        <p>A cryptocurrency exchange is an online platform where you can buy, sell, or trade cryptocurrencies. Think of it as a stock exchange, but instead of trading stocks, you're trading digital currencies.</p>
+        <p>There are three main types of crypto exchanges:</p>
+        <ul>
+            <li><strong>Centralized Exchanges (CEXs):</strong> These are managed by a central authority, similar to a traditional bank. They are user-friendly and offer features like spot trading, margin trading, and futures. Examples include Binance, Coinbase, and Kraken.</li>
+            <li><strong>Decentralized Exchanges (DEXs):</strong> These operate without a central authority, using blockchain technology to facilitate peer-to-peer trades. DEXs like Uniswap and PancakeSwap provide more privacy but can be less intuitive for beginners.</li>
+            <li><strong>Hybrid Exchanges:</strong> These aim to combine the best of both worlds, offering the speed and liquidity of CEXs with the privacy and security of DEXs. Examples include Nash and Qurrex.</li>
+        </ul>
+
+        <h2>How Do Crypto Exchanges Work?</h2>
+        <p>Crypto exchanges connect buyers and sellers via an order book, where orders to buy or sell are matched.</p>
+        <h3>Buying Crypto</h3>
+        <ul>
+            <li>Deposit funds using fiat currency (like USD or EUR) or another cryptocurrency.</li>
+            <li>Place a buy order for the desired cryptocurrency.</li>
+        </ul>
+        <h3>Selling Crypto</h3>
+        <ul>
+            <li>Transfer your cryptocurrency to the exchange.</li>
+            <li>Place a sell order for fiat currency or another cryptocurrency.</li>
+        </ul>
+        <p>Some platforms also support <strong>instant buy/sell</strong> options, allowing users to make quick transactions without navigating the order book.</p>
+
+        <h2>Key Features of a Crypto Exchange</h2>
+        <p>When choosing a crypto exchange, consider the following:</p>
+        <ul>
+            <li><strong>Security:</strong> Ensure the platform uses strong security measures, such as two-factor authentication (2FA), cold storage for assets, and robust encryption.</li>
+            <li><strong>Fees:</strong> Exchanges charge fees for trading, deposits, and withdrawals. Compare these fees to minimize costs.</li>
+            <li><strong>Liquidity:</strong> High liquidity ensures you can quickly buy or sell assets without significant price changes.</li>
+            <li><strong>Supported Cryptocurrencies:</strong> Some exchanges offer a wide variety of tokens, while others focus on popular ones like Bitcoin and Ethereum.</li>
+            <li><strong>User Interface:</strong> Beginners may prefer exchanges with intuitive interfaces, while experienced traders might prioritize advanced tools and charting options.</li>
+        </ul>
+
+        <h2>Pros and Cons of Crypto Exchanges</h2>
+        <h3>Pros</h3>
+        <ul>
+            <li>Easy access to buy and sell cryptocurrencies.</li>
+            <li>Some offer advanced trading features and tools.</li>
+            <li>Provide custodial wallets for storing assets.</li>
+        </ul>
+        <h3>Cons</h3>
+        <ul>
+            <li>Centralized exchanges may be vulnerable to hacks.</li>
+            <li>Fees can add up, especially for frequent traders.</li>
+            <li>DEXs can be complex and have lower liquidity.</li>
+        </ul>
+
+        <h2>Tips for Using a Crypto Exchange Safely</h2>
+        <div class="tips">
+            <ul>
+                <li><strong>Do Your Research:</strong> Verify the exchange’s reputation and reviews before signing up.</li>
+                <li><strong>Enable Security Features:</strong> Use 2FA, strong passwords, and avoid sharing your credentials.</li>
+                <li><strong>Start Small:</strong> Begin with small amounts to minimize risks while learning.</li>
+                <li><strong>Move Funds to a Wallet:</strong> For long-term holding, transfer your assets to a secure crypto wallet rather than leaving them on the exchange.</li>
+            </ul>
+        </div>
+
+        <h2>Conclusion</h2>
+        <p>Understanding how crypto exchanges work is the first step toward becoming a confident cryptocurrency trader. Whether you’re a beginner looking for ease of use or an experienced trader seeking advanced tools, there’s an exchange tailored to your needs. Prioritize security, research thoroughly, and trade responsibly to make the most of your crypto journey.</p>
+        <p><strong>Happy trading!</strong></p>
+
+    <!-- Button to watch YouTube video -->
+    <button onclick="watchVideo()">Watch a YouTube Video in the App</button>
+
+    <footer>
+        <p>© 2024 CFS Trading Academy | All rights reserved</p>
+    </footer>
+</div>
+
+<script>
+    function unlockPage() {
+        const pin = document.getElementById('pinInput').value;
+        const correctPin = "5555"; // Set your desired PIN here
+        
+        if (pin === correctPin) {
+            document.getElementById('unlockPage').style.display = 'none';
+            document.getElementById('mainPage').style.display = 'block';
+        } else {
+            document.getElementById('errorMessage').style.display = 'block';
+        }
+    }
+
+    function watchVideo() {
+        window.location.href = "https://youtu.be/b993Ew9GffE";  // Update this with your specific YouTube link
+    }
+</script>
+
+</body>
+</html>
