@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Unlock and Main Page</title>
+    <style>
+        /* General Styling */
+          body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        /* Unlock Page Styling */
+        .unlock-container {
+            max-width: 250px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 120px auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #0275d8;
+            margin-bottom: 20px;
+        }
+
+        input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        button {
+            display: block;
+            background-color: #0275d8;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #025aa5;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+
+        /* Main Page Styling */
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #0275d8;
+            margin-top: 30px;
+            font-size: 2,0rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 2,0rem;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Unlock Page -->
+<div class="unlock-container" id="unlockPage">
+    <h1>Enter PIN to Unlock</h1>
+    <input type="password" id="pinInput" maxlength="4" placeholder="Enter 4-digit PIN">
+    <button onclick="unlockPage()">Unlock</button>
+    <p class="error-message" id="errorMessage" style="display:none;">Incorrect PIN. Try again.</p>
+</div>
+
+<!-- Main Content Page -->
+<div class="container" id="mainPage">
+    
+    <h1>Common Crypto Scams: What You Need to Know to Stay Safe</h1>
+        <p>The world of cryptocurrency offers immense opportunities for investment and financial freedom, but it also comes with risks. Scammers have found creative ways to exploit the unregulated and anonymous nature of digital assets. To protect yourself, it’s essential to understand the most common crypto scams and how to avoid them.</p>
+
+        <h2>1. Phishing Scams</h2>
+        <p>Phishing scams target your private keys or login credentials by impersonating legitimate entities. These scams often involve fake websites, emails, or messages designed to look like they are from reputable wallets, exchanges, or companies.</p>
+        <h3>How to Avoid Phishing Scams:</h3>
+        <ul>
+            <li>Double-check the URL of any crypto-related website before entering your credentials.</li>
+            <li>Never click on links from unsolicited emails or messages.</li>
+            <li>Use two-factor authentication (2FA) to secure your accounts.</li>
+        </ul>
+
+        <h2>2. Ponzi and Pyramid Schemes</h2>
+        <p>Ponzi schemes promise high returns with little to no risk by using funds from new investors to pay earlier ones. Pyramid schemes reward participants for recruiting others, creating a cycle that collapses when new members stop joining.</p>
+        <h3>How to Avoid Ponzi and Pyramid Schemes:</h3>
+        <ul>
+            <li>Be wary of “guaranteed returns” or “risk-free” investments.</li>
+            <li>Research the team and business model behind any project.</li>
+            <li>Avoid platforms that prioritize recruitment over actual products or services.</li>
+        </ul>
+
+        <h2>3. Fake Initial Coin Offerings (ICOs) and Tokens</h2>
+        <p>Scammers create fake cryptocurrencies or ICOs to lure investors into funding non-existent projects. They often use buzzwords and fake endorsements to gain credibility.</p>
+        <h3>How to Avoid Fake ICOs:</h3>
+        <ul>
+            <li>Verify the project's whitepaper, team, and roadmap.</li>
+            <li>Check if the project has a reputable and active online presence.</li>
+            <li>Use platforms that vet ICOs and token launches.</li>
+        </ul>
+
+        <h2>4. Pump-and-Dump Schemes</h2>
+        <p>In these scams, scammers artificially inflate the price of a cryptocurrency through false hype and coordinated buying. Once the price spikes, they sell off their holdings, leaving others with losses.</p>
+        <h3>How to Avoid Pump-and-Dump Schemes:</h3>
+        <ul>
+            <li>Avoid following random investment advice on social media.</li>
+            <li>Be cautious of sudden price surges in low-volume cryptocurrencies.</li>
+            <li>Stick to well-known and established cryptocurrencies.</li>
+        </ul>
+
+        <h2>5. Rug Pulls</h2>
+        <p>Rug pulls occur when developers launch a token or DeFi project, attract investors, and then abandon the project, taking investors' funds with them. This is common in decentralized exchanges and meme coins.</p>
+        <h3>How to Avoid Rug Pulls:</h3>
+        <ul>
+            <li>Examine the project’s smart contract and liquidity locks.</li>
+            <li>Invest in projects audited by reputable firms.</li>
+            <li>Avoid projects with anonymous teams or unrealistic promises.</li>
+        </ul>
+
+        <h2>6. Social Media Scams and Impersonations</h2>
+        <p>Scammers often impersonate celebrities, influencers, or companies on social media, promising to double your crypto if you send them funds first. These scams also include fake giveaways and promotions.</p>
+        <h3>How to Avoid Social Media Scams:</h3>
+        <ul>
+            <li>Never send crypto to strangers or giveaway accounts.</li>
+            <li>Verify the legitimacy of social media accounts before engaging.</li>
+            <li>Remember that genuine organizations will not ask you for money upfront.</li>
+        </ul>
+
+        <h2>7. Malware and Fake Apps</h2>
+        <p>Scammers distribute malware or fake wallet apps to steal your private keys. These apps may look legitimate but are designed to drain your funds once you input your details.</p>
+        <h3>How to Avoid Malware and Fake Apps:</h3>
+        <ul>
+            <li>Download wallets and apps only from official websites or app stores.</li>
+            <li>Use antivirus software and keep your devices updated.</li>
+            <li>Avoid clicking on suspicious ads or pop-ups.</li>
+        </ul>
+
+        <h2>8. Fake Investment Platforms</h2>
+        <p>Fake platforms mimic real crypto exchanges or trading platforms, enticing users to deposit funds. Once deposited, your funds are locked, and you cannot withdraw them.</p>
+        <h3>How to Avoid Fake Investment Platforms:</h3>
+        <ul>
+            <li>Check for reviews and user feedback before using a platform.</li>
+            <li>Ensure the platform is regulated and has proper licensing.</li>
+            <li>Avoid platforms with overly complex or suspicious withdrawal processes.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>While cryptocurrency offers exciting opportunities, it also attracts scams targeting the uninformed and overly eager. Protect yourself by staying informed, doing thorough research, and maintaining a healthy level of skepticism. Remember, if something sounds too good to be true, it probably is.</p>
+        <p>Stay vigilant, and you can safely navigate the crypto space without falling victim to these common scams.</p>
+        
+    
+    
+    <a href="https://youtu.be/zRko7zYss2U?feature=shared">
+  <button>Watch a YouTube Video in the App</button>
+  
+</a>
+    
+
+    <!-- Button to watch YouTube video -->
+    
+
+    <footer>
+        <p>© 2024 CFS Trading Academy | All rights reserved</p>
+    </footer>
+</div>
+
+<script>
+    function unlockPage() {
+        const pin = document.getElementById('pinInput').value;
+        const correctPin = "9999"; // Set your desired PIN here
+        
+        if (pin === correctPin) {
+            document.getElementById('unlockPage').style.display = 'none';
+            document.getElementById('mainPage').style.display = 'block';
+        } else {
+            document.getElementById('errorMessage').style.display = 'block';
+        }
+    }
+
+    
+    
+</script>
+
+</body>
+  </html>
